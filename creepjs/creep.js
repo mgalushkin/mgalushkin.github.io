@@ -3398,19 +3398,25 @@
 						return chromeIndex > controlIndex
 					})(),
 					['chrome.runtime functions are invalid']: (() => {
+						console.log("1")
 						if (!('chrome' in window && 'runtime' in chrome)) {
+							console.log("2")
 							return false
 						}
 						try {
 							if ('prototype' in chrome.runtime.sendMessage ||
 								'prototype' in chrome.runtime.connect) {
+								console.log("3")
 								return true
 							}
+							console.log("4")
 							new chrome.runtime.sendMessage;
+							console.log("5")
 							new chrome.runtime.connect;
 							return true
 						}
 						catch (error) {
+							console.log("6")
 							return error.constructor.name != 'TypeError' ? true : false
 						}
 					})(),
