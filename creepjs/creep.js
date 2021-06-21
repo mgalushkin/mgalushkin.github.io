@@ -3373,16 +3373,23 @@
 				stealth: {
 					['srcdoc throws an error']: (() => {
 						try {
+							console.log("11")
 							const { srcdoc } = document.createElement('iframe');
+							console.log("12")
+							console.log(srcdoc)	
 							return !!srcdoc
 						}
 						catch (error) {
+							console.log("13")
 							return true
 						}
 					})(),
 					['srcdoc triggers a window Proxy']: (() => {
 						const iframe = document.createElement('iframe');
 						iframe.srcdoc = '' + hashMini(crypto.getRandomValues(new Uint32Array(10)));
+
+						console.log("14")
+						console.log(iframe.contentWindow)
 						return !!iframe.contentWindow
 					})(),
 					['index of chrome is too high']: (() => {
@@ -3409,14 +3416,11 @@
 								console.log("3")
 								return true
 							}
-							console.log("4")
 							new chrome.runtime.sendMessage;
-							console.log("5")
 							new chrome.runtime.connect;
 							return true
 						}
 						catch (error) {
-							console.log("6")
 							return error.constructor.name != 'TypeError' ? true : false
 						}
 					})(),
