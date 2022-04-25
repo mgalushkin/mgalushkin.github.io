@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>WebRTC</title>
+</head>
+<body>
+	<script src="spoof.js"></script>
+    <section>
+        <span>candidates:</span>
+        <table id="candidates">
+            <thead id="candidatesHead">
+                <tr>
+                    <th>Time</th>
+                    <th>Component</th>
+                    <th>Type</th>
+                    <th>Foundation</th>
+                    <th>Protocol</th>
+                    <th>Address</th>
+                    <th>Port</th>
+                    <th>Priority</th>
+                </tr>
+            </thead>
+            <tbody id="candidatesBody"></tbody>
+        </table>
+        <button id="gather" style="display: none;">Gather candidates</button>
+        <div id="error" style="display: none;"></div>
+    </section>
+    <div id="proto">
+
+    </div>
+    <br>
+    <span>events:</span>
+    <div id="iceEvents"></div>
+    <script src="index.js"></script>
+</body>
+</html>
