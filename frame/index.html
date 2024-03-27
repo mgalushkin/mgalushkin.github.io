@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+    <meta charset="UTF-8">
+    <title>Frame</title>
+</head>
+</head>
+<body>
+    <iframe id=id_1 src="iframe.htm" height="200" width="300" title="Iframe Example"></iframe>
+    <script>
+        const frame = document.getElementById("id_1");
+        console.log(frame.contentWindow)
+        console.log(frame.contentWindow.NotRestoredReasonDetails)
+    </script>
+</body>
+</html>
