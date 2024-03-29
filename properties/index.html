@@ -8,9 +8,7 @@
 <script>
     r = {}
 
-    const name = 'timeStamp'
-
-    // for (name of Object.keys(Object.getOwnPropertyDescriptors(console))) {
+    for (name of Object.keys(Object.getOwnPropertyDescriptors(console))) {
         let cnt = 0
         let res = null
 
@@ -43,7 +41,7 @@
             perf: parseInt(performance.now() - start),
             res: res ? res : null
         }
-    // }
+    }
 
     document.body.innerHTML += `<pre id=jopa>${JSON.stringify(r, '', 2)}</pre>`
 </script>
