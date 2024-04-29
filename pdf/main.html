@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const frame = document.createElement('iframe');
+    frame.setAttribute('style', 'display:none');
+    document.body.append(frame);
+    const fw = frame.contentWindow;
+    document.body.removeChild(frame);
+
+    document.body.innerHTML += fw.navigator.pdfViewerEnabled
+    document.body.innerHTML += '<br>'
+    document.body.innerHTML += JSON.stringify(fw.navigator.plugins)
+</script>
+</body>
+</html>
