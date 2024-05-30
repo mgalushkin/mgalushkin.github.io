@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    
+    const t = (function(){
+        const start = Date.now();
+        for (let r = 0; r < 1000; r++) {
+          console.timeStamp();
+        }
+
+        return Date.now() - start
+    })()
+
+
+    document.body.innerHTML += `<pre>${t}</pre>`
+</script>
+</body>
+</html>
